@@ -289,10 +289,10 @@ function IndexPage() {
                 <input placeholder="Name of Contact Person" style={inputStyle} />
                 <input placeholder="Contact Email" style={inputStyle} />
                 <select name="Service Categories " style={inputStyle}>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
+                  <option value="volvo">Exercise</option>
+                  <option value="saab">Languages</option>
+                  <option value="mercedes">Travelling</option>
+                  <option value="audi">Mindfulness</option>
                 </select>
                 <input placeholder="Contact Email" type="submit" style={submitStyle} />
               </Grid>
