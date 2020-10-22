@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from '../../utils/styled'
-import LayoutContainer from '../../containers/LayoutContainer'
 import Container from './Container'
 
 interface HeaderProps {
@@ -9,9 +8,11 @@ interface HeaderProps {
 }
 
 const Wrapper = styled('header')`
-  padding: 0.5rem 1.5rem;
-  background-color: ${props => props.theme.colors.brand};
-  color: ${props => props.theme.colors.white};
+  color: black;
+  height: 70px;
+  background: rgb(255, 255, 255, 0.2);
+  backdrop-filter: blur(3.20553px);
+  z-index: 1;
   font-family: ${props => props.theme.fonts.headings};
 `
 
@@ -20,23 +21,20 @@ const HeaderInner = styled(Container)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
+  min-width: 100%;
   @media (min-width: ${props => props.theme.breakpoints.lg}) {
     flex-direction: row;
   }
 `
 
 const HeaderLeft = styled('div')`
-  padding-right: 1rem;
+  width: 256px;
+  margin-left: 11.42%;
 `
 
 const HeaderNav = styled('nav')`
-  flex: 1 1 auto;
-  margin: 1rem 0;
-
-  @media (min-width: ${props => props.theme.breakpoints.lg}) {
-    margin: 0;
-  }
+  float: left;
+  margin-right: 9%;
 `
 
 const HeaderNavLink = styled(NavLink)`
@@ -45,68 +43,51 @@ const HeaderNavLink = styled(NavLink)`
   &.is-active {
     text-decoration: underline;
   }
-`
 
-const HeaderRight = styled('div')`
-  padding-left: 1rem;
+  img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
 `
 
 const Title = styled('h2')`
-  margin: 0;
-  font-weight: 500;
-`
-
-const CurrentTheme = styled('span')`
-  margin-right: 1rem;
-`
-
-const ThemeSwitcherButton = styled('button')`
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid ${props => props.theme.colors.white};
-  border-radius: 3px;
-  background-color: ${props => props.theme.colors.white};
-  color: ${props => props.theme.colors.brand};
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover,
-  &:focus {
-    background-color: transparent;
-    color: ${props => props.theme.colors.white};
-  }
+  font-family: Avenir;
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 41px;
+  margin-top: 16px;
 `
 
 const Header: React.SFC<HeaderProps> = ({ title }) => (
   <Wrapper>
     <HeaderInner>
       <HeaderLeft>
-        <Title>{title}</Title>
+        <Title>
+          Y<u>our</u> Purpose.
+        </Title>
       </HeaderLeft>
       <HeaderNav>
         <HeaderNavLink exact to="/" activeClassName="is-active">
-          Home
+          About Us
         </HeaderNavLink>
         <HeaderNavLink to="/heroes" activeClassName="is-active">
-          Heroes
+          Our Service Shop
         </HeaderNavLink>
         <HeaderNavLink to="/teams" activeClassName="is-active">
-          Teams
+          Resources
+        </HeaderNavLink>
+        <HeaderNavLink to="/services" activeClassName="is-active">
+          Join Us As A Partner
+        </HeaderNavLink>
+        <HeaderNavLink to="/myAccount" activeClassName="is-active">
+          My Account
+          <img src="../joinus.jpg" alt="" />
         </HeaderNavLink>
       </HeaderNav>
-      <HeaderRight>
-        <LayoutContainer>
-          {({ theme, setTheme }) => (
-            <>
-              <CurrentTheme>Current theme: {theme}</CurrentTheme>
-              <ThemeSwitcherButton onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>Switch theme</ThemeSwitcherButton>
-            </>
-          )}
-        </LayoutContainer>
-      </HeaderRight>
     </HeaderInner>
   </Wrapper>
 )

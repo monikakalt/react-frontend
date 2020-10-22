@@ -45,9 +45,6 @@ const lightTheme: Theme = {
     md: '720px',
     lg: '960px',
     xl: '1140px'
-  },
-  heights: {
-    header: '60px'
   }
 }
 

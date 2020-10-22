@@ -48,13 +48,16 @@ const normalize = css`
     margin: 0;
   }
 
+  button:focus {
+    outline: 0;
+  }
+
   /**
   * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
   */
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol';
+    font-family: Avenir, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
 
   /**
@@ -107,7 +110,7 @@ const normalize = css`
   kbd,
   samp,
   pre {
-    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* 1 */
+    font-family: Avenir, Menlo, Courier, monospace; /* 1 */
     font-size: 1em; /* 2 */
   }
 

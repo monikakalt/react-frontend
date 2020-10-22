@@ -40,9 +40,6 @@ export interface Theme {
     lg: string
     xl: string
   }
-  heights: {
-    header: string
-  }
 }
 
 export default styled as CreateStyled<Theme>
